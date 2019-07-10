@@ -5,7 +5,6 @@ Plugin URI: https://github.com/anuchit33/wordpress-plugin-admin
 Description: wordpress-plugin-admin
 Author: Anuchit Yai-in
 Version: 0.0.1
-Author URI: https://github.com/anuchit33/wordpress-plugin-admin
 */
 
 class WordPressPluginAdmin {
@@ -18,11 +17,6 @@ class WordPressPluginAdmin {
         add_action('admin_menu', array($this, 'wp_add_menu'));
     }
 
-
-    public function init(){
-        
-    }
-
     function wp_activation(){
     }
 
@@ -31,14 +25,13 @@ class WordPressPluginAdmin {
 
     function wp_add_menu(){
 
-
         $page_title = 'Contact US';
         $menu_title = 'Contact US';
         $capability = 'read'; // manage_options , read
-        $menu_slug = 'wp-contact-list';
+        $menu_slug = 'wp-contact-list'; 
         $function = '';
         $icon_url = 'dashicons-email-alt';
-        $position = '2.2.10';
+        $position = '2';
 
         add_menu_page($page_title , $menu_title, $capability, $menu_slug ,$function , $icon_url, $position);
 
@@ -49,7 +42,7 @@ class WordPressPluginAdmin {
         $sub_menu_slug = 'wp-contact-list';
         $sub_capability = 'read';
 
-        add_submenu_page($sub_parent_slug, $sub_page_title, $sub_menu_title , $sub_capability, $sub_menu_slug , array(__CLASS__, 'wp_page_contact_list'));
+        add_submenu_page($sub_parent_slug, $sub_page_title, $sub_menu_title , $sub_capability, $sub_menu_slug , array($this, 'wp_page_contact_list'));
 
         // add sub menu 2
         $sub_parent_slug = $menu_slug;
@@ -58,7 +51,7 @@ class WordPressPluginAdmin {
         $sub_menu_slug = 'wp-contact-email';
         $sub_capability = 'read';
 
-        add_submenu_page($sub_parent_slug, $sub_page_title, $sub_menu_title , $sub_capability, $sub_menu_slug , array(__CLASS__, 'wp_page_contact_email'));
+        add_submenu_page($sub_parent_slug, $sub_page_title, $sub_menu_title , $sub_capability, $sub_menu_slug , array($this, 'wp_page_contact_email'));
 
     }
 
