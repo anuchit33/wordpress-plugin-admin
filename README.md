@@ -101,7 +101,7 @@ function wp_add_menu(){
 ```
 
 ### 6. สร้าง templates admin
-- สร้างไฟล์ `wordpress-plugin-frontend/templates/admin/contact-list.php`
+- สร้างไฟล์ `wordpress-plugin-admin/templates/admin/contact-list.php`
 ```
 <?php
 global $wpdb;
@@ -167,7 +167,7 @@ $to = empty($_GET['to']) ? date('Y-m-d') : sanitize_text_field($_GET['to']);
 </script>
 ```
 
-- สร้างไฟล์ `wordpress-plugin-frontend/templates/admin/contact-email.php`
+- สร้างไฟล์ `wordpress-plugin-admin/templates/admin/contact-email.php`
 ```
 <?php
 global $wpdb;
