@@ -2,7 +2,7 @@
 ขั้นตอนสร้าง WordPress Plugin สำหรับแสดงผลส่วน Admin
 
 ### 1.Header Requirements
-สร้างไฟล์ wp-content/plugins/wordpress-plugin-frontend/`wordpress-plugin-frontend.php`
+สร้างไฟล์ wp-content/plugins/wordpress-plugin-admin/`wordpress-plugin-admin.php`
 ```
 <?php
 /*
